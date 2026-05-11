@@ -53,15 +53,15 @@
 
           <router-link to="/shop" class="logo">
             <img
-              class="img-fluid light"
-              src="/assets/images/logo/logo-7.svg"
+              class="img-fluid light custom-logo"
+              src="/assets/images/logo/happy-logo.png"
               alt="logo"
             />
-            <img
+            <!-- <img
               class="img-fluid dark"
               src="/assets/images/logo/logo-7-white.svg"
               alt="logo"
-            />
+            /> -->
           </router-link>
           <div class="search-input d-lg-block d-none position-relative">
             <div class="d-flex">
@@ -958,5 +958,18 @@
     </div>
   </header>
 </template>
+
+<style scoped>
+  .custom-logo {
+    width: 100px;
+    height: auto;
+  }
+</style>
+
+<script>
+export default {
+  name: "Header",
+};
+</script>
 
 
