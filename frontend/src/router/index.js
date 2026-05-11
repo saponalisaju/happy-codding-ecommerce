@@ -25,29 +25,19 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import("@/src/pages/Home.vue"),
+    component: () => import("../pages/Home.vue"),
   },
   {
     path: "/shop",
     name: "shop",
-    component: () => import("@/src/pages/Shop.vue"),
-    children: [
-      {
-        path: "/",
-        name: "shop",
-        component: () => import("@/src/pages/Shop.vue"),
-      }
-    ]
+    component: () => import("../pages/Shop.vue"),
+    
   },
-  {
-    path: "/shop/infinite-scroll",
-    name: "infinite-scroll",
-    component: () => import("@/src/sections/shop/InfiniteScroll.vue"),
-  },
+  
   {
     path: "/search",
     name: "search",
-    component: () => import("@/src/sections/home/Search.vue"),
+    component: () => import("../sections/home/Search.vue"),
   },
   {
     path: "/app",
