@@ -4,7 +4,7 @@
         <div class="container">
             <div class="title-flex title-b-space">
                 <h3 class="title">Explore Watches</h3>
-                <router-link class="title-link" to="/shop">
+                <router-link class="title-link" to="/shop/infinite-scroll">
                     View All
                     <svg>
                         <use href="/assets/svg/sprite_icon.svg#right-arrow"></use>

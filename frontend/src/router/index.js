@@ -30,7 +30,7 @@ const routes = [
   {
     path: "/shop",
     name: "Index7",
-    component: () => import("../../src/pages/Index7.vue"),
+    component: () => import("../pages/shop/Home.vue"),
   },
   {
     path: "/shop/infinite-scroll",
@@ -142,7 +142,7 @@ const routes = [
       requiresGuest: true,
     },
   },
-  
+
   {
     path: "/login",
     name: "login",
@@ -180,17 +180,15 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
-
   const token = store.state.user.token;
-  
+
   // 1. Not logged in → protect admin routes
   if (to.meta.requiresAuth && !token) {
     return { name: "login" };
   }
 
-  console.log(store.state.user.token)
-  console.log(store.state.user.data)
-
+  console.log(store.state.user.token);
+  console.log(store.state.user.data);
 });
 
 export default router;
