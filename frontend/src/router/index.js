@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
+import Home from "../pages/Home.vue";
+import Shop from "../pages/Shop.vue";
+import TrendingProducts from "../views/Products/TrendingProduct.vue";
 import AppLayout from "../components/AppLayout.vue";
 import Login from "../views/Login.vue";
 import Dashboard from "../views/Admin/Dashboard.vue";
@@ -20,27 +23,50 @@ import CustomersReport from "../views/Reports/CustomersReport.vue";
 import ProductForm from "../views/Admin/Products/ProductForm.vue";
 import Categories from "../views/Categories/Categories.vue";
 import Register from "../views/Register.vue";
+import ContactUs from "../views/ContactUs.vue";
+import Search from "../views/Homes/Search.vue";
+import Cart from "../views/Cart.vue";
+import Wishlist from "../components/ui/modals/Wishlist.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import("../../src/pages/Home.vue"),
+    component: Home,
   },
   {
     path: "/shop",
+
     name: "Index7",
     component: () => import("../pages/shop/Home.vue"),
+    name: "shop",
+    component: Shop,
+    // children: [
+    //   {
+    //     path: "trendding-products",
+    //     name: "trending-products",
+    //     component: ()=> import("../sections/product/TrendingProduct.vue")
+    //   }
+    // ]
   },
+
   {
-    path: "/shop/infinite-scroll",
-    name: "infinite-scroll",
-    component: () => import("../../src/sections/shop/InfiniteScroll.vue"),
+    path: "/product",
+    name: "product",
+    component: Home,
+    children: [
+      {
+        path: "trendding-products",
+        name: "trending-products",
+        component: TrendingProducts,
+      },
+    ],
   },
+
   {
     path: "/search",
     name: "search",
-    component: () => import("../../src/sections/home/Search.vue"),
+    component: Search,
   },
   {
     path: "/app",
@@ -56,16 +82,7 @@ const routes = [
         name: "app.dashboard",
         component: Dashboard,
       },
-      {
-        path: "add-cart",
-        name: "app.add-cart",
-        component: AddToCart,
-      },
-      {
-        path: "wish-list",
-        name: "app.wish-list",
-        component: WishList,
-      },
+
       {
         path: "products",
         name: "app.products",
@@ -171,6 +188,21 @@ const routes = [
     path: "/:pathMatch(.*)",
     name: "notfound",
     component: NotFound,
+  },
+  {
+    path: "/contact_us",
+    name: "contact_us",
+    component: ContactUs,
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    component: Cart,
+  },
+  {
+    path: "/wish-list",
+    name: "wish-list",
+    component: Wishlist,
   },
 ];
 

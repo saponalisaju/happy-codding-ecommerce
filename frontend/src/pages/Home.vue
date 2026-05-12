@@ -15,33 +15,33 @@
 import { defineAsyncComponent } from 'vue'
 
 const Hero = defineAsyncComponent(() =>
-  import('../sections/home/Hero.vue')
+  import('../views/Homes/Hero.vue')
 )
 const BrandLogo = defineAsyncComponent(() =>
-  import('../sections/home/BrandLogo.vue')
+  import('../views/Homes/BrandLogo.vue')
 )
 const ProductTop = defineAsyncComponent(() =>
-  import('../sections/home/ProductTop.vue')
+  import('../views/Homes/ProductTop.vue')
 )
 const BannerSlider = defineAsyncComponent(() =>
-  import('../sections/home/BannerSlider.vue')
+  import('../views/Homes/BannerSlider.vue')
 )
 const BannerSection = defineAsyncComponent(() =>
-  import('../sections/home/BannerSection.vue')
+  import('../views/Homes/BannerSection.vue')
 )
 const ProductMiddle = defineAsyncComponent(() =>
-  import('../sections/home/ProductMiddle.vue')
+  import('../views/Homes/ProductMiddle.vue')
 )
 const ProductBottom = defineAsyncComponent(() =>
-  import('../sections/home/ProductBottom.vue')
+  import('../views/Homes/ProductBottom.vue')
 )
 const BannerBottom = defineAsyncComponent(() =>
-  import('../sections/home/BannerBottom.vue')
+  import('../views/Homes/BannerBottom.vue')
 )
 const BlogPage = defineAsyncComponent(() =>
-  import('../sections/home/BlogPage.vue')
+  import('../views/Homes/BlogPage.vue')
 )
 const Testimonial = defineAsyncComponent(() =>
-  import('../sections/home/Testimonial.vue')
+  import('../views/Homes/Testimonial.vue')
 )
 </script>

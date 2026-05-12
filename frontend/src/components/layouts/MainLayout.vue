@@ -5,14 +5,13 @@
   <main>
     <slot />
   </main>
-
+  
   <Footer />
   <Newsletter />
   <ExitModal />
   <QuickView />
   <StoreProduct />
   <AddToCart />
-  <Wishlist />
   <TapToTap />
   <CookieBar />
 </template>
@@ -22,13 +21,12 @@ import Header from './Header.vue'
 import MobileMenu from './MobileMenu.vue'
 import Footer from './Footer.vue'
 
-import Wishlist from '../ui/modals/Wishlist.vue';
-import TapToTap from '../ui/modals/TapToTap.vue';
-import CookieBar from '../ui/modals/CookieBar.vue';  
+import TapToTap from '@/ui/modals/TapToTap.vue';
+import CookieBar from '@/ui/modals/CookieBar.vue';  
 
-import Newsletter from '../ui/modals/Newsletter.vue'
-import ExitModal from '../ui/modals/ExitModal.vue'
-import QuickView from '../ui/modals/QuickView.vue'
-import StoreProduct from '../ui/modals/StoreProduct.vue'
-import AddToCart from '../../views/Cart/AddToCart.vue';
+import Newsletter from '@/ui/modals/Newsletter.vue'
+import ExitModal from '@/ui/modals/ExitModal.vue'
+import QuickView from '@/ui/modals/QuickView.vue'
+import StoreProduct from '@/ui/modals/StoreProduct.vue'
+import AddToCart from '@/views/Cart/AddToCart.vue';
 </script>
