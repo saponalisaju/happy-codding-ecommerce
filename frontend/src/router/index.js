@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../pages/Home.vue";
-import Shop from "../pages/Shop.vue";
+const Home = () => import("../pages/Home.vue");
+const Shop = () => import("../pages/Shop.vue");
 import TrendingProducts from "../views/Products/TrendingProduct.vue";
 import AppLayout from "../components/AppLayout.vue";
 import Login from "../views/Login.vue";
-import Dashboard from "../views/Admin/Dashboard.vue";
-import Products from "../views/Admin/Products/Products.vue";
+const Dashboard = () => import("../views/Admin/Dashboard.vue");
+const Products = () => import("../views/Admin/Products/Products.vue");
 import AddToCart from "../views/Cart/AddToCart.vue";
-import WishList from "../components/ui/modals/Wishlist.vue";
 import Users from "../views/Users/Users.vue";
 import Customers from "../views/Admin/Customers/Customers.vue";
 import CustomerView from "../views/Admin/Customers/CustomerView.vue";
@@ -46,7 +45,7 @@ const routes = [
     component: Home,
     children: [
       {
-        path: "trendding-products",
+        path: "trending-products",
         name: "trending-products",
         component: TrendingProducts,
       },
@@ -152,7 +151,7 @@ const routes = [
 
   {
     path: "/login",
-    name: "Login",
+    name: "login",
     component: Login,
     meta: {
       requiresGuest: true,
@@ -174,11 +173,7 @@ const routes = [
       requiresGuest: true,
     },
   },
-  {
-    path: "/:pathMatch(.*)",
-    name: "notfound",
-    component: NotFound,
-  },
+
   {
     path: "/contact_us",
     name: "contact_us",
@@ -194,6 +189,12 @@ const routes = [
     name: "wishlist",
     component: Wishlist,
   },
+
+  {
+    path: "/:pathMatch(.*)",
+    name: "notfound",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
@@ -204,13 +205,13 @@ const router = createRouter({
 router.beforeEach((to) => {
   const token = store.state.user.token;
 
-  // 1. Not logged in → protect admin routes
   if (to.meta.requiresAuth && !token) {
     return { name: "login" };
   }
 
-  console.log(store.state.user.token);
-  console.log(store.state.user.data);
+  if (to.meta.requiresGuest && token) {
+    return { name: "home" };
+  }
 });
 
 export default router;

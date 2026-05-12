@@ -949,7 +949,7 @@
           </li>
         
           <li class="">
-            <router-link class="" to="/login" name="Login">
+            <router-link class="" to="/login" name="login">
               <i class="iconsax" data-icon="user-2"></i>
             </router-link>
          </li>
