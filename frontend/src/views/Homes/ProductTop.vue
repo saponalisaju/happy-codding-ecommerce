@@ -4,12 +4,12 @@
         <div class="container">
             <div class="title-flex title-b-space">
                 <h3 class="title">Explore Watches</h3>
-                <router-link class="title-link" to="/shop/infinite-scroll">
+                <RouterLink class="title-link" to="/shop" name="shop-now">
                     View All
                     <svg>
                         <use href="/assets/svg/sprite_icon.svg#right-arrow"></use>
                     </svg>
-                </router-link>
+                </RouterLink>
             </div>
             <div class="row g-sm-4 g-3 ratio_square">
                 <ProductTopView
