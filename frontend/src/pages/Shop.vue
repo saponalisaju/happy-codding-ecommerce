@@ -1,8 +1,8 @@
 
 <script setup>
-import ProductCard from "../../components/ProductCard.vue";
+import ProductCard from "@/components/ProductCard.vue";
 
-import { products } from "../../data/products";
+import { products } from "@/data/products";
 </script>
 
 <template>

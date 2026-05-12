@@ -27,7 +27,7 @@
         </div>
         <p>
           Get 15% OFF on your First Order.
-          <router-link to="/shop/infinite-scroll">Shop Now!</router-link>
+          <Router-link to="/shop">Shop Now!</Router-link>
         </p>
         <div class="flash-fire">
           <img src="/assets/images/gif/fire.gif" alt="fire" />
@@ -57,11 +57,11 @@
               src="/assets/images/logo/happy-logo.png"
               alt="logo"
             />
-            <!-- <img
+            <img
               class="img-fluid dark"
               src="/assets/images/logo/logo-7-white.svg"
               alt="logo"
-            /> -->
+            />
           </router-link>
           <div class="search-input d-lg-block d-none position-relative">
             <div class="d-flex">
@@ -72,16 +72,16 @@
                 </a>
                 <ul class="category-list">
                   <li>
-                    <a href="shop-page(tending-product-2).html">Phone</a>
+                    <router-link to="/trending-product">Phone</router-link>
                   </li>
                   <li>
-                    <a href="shop-page(tending-product-2).html">Laptop</a>
+                    <router-link to="/trending-product">Laptop</router-link>
                   </li>
                   <li>
-                    <a href="shop-page(tending-product-2).html">Keyboard</a>
+                    <router-link to="/trending-product">Keyboard</router-link>
                   </li>
                   <li>
-                    <a href="shop-page(tending-product-2).html">Mouse</a>
+                    <router-link to="/trending-product">Mouse</router-link>
                   </li>
                 </ul>
               </div>
@@ -105,9 +105,9 @@
                 />
               </div>
               <div class="contact">
-                <a href="contact-us.html">
+                <router-link to="/contact_us">
                   <h6>Contact us</h6>
-                </a>
+                </router-link>
                 <p>Call us for any Inquiry</p>
               </div>
             </div>
@@ -118,13 +118,13 @@
     <div class="container d-md-block d-none">
       <nav class="navbar navbar-expand-lg">
         <div class="dropdown-category">
-          <a href="#!">
+          <router-link href="#!">
             <img src="/assets/images/menu.svg" alt="Icon" />
             Categories
-          </a>
+          </router-link>
           <ul class="category-list">
             <li>
-              <a href="shop-page(full-width).html">Phone</a>
+              <router-link href="shop-page(full-width).html">Phone</router-link>
             </li>
             <li>
               <a href="shop-page(full-width).html">Laptop</a>
@@ -931,18 +931,18 @@
         </div>
         <ul class="header-option">
           <li>
-            <router-link to="/search">
+            <RouterLink to="/search">
               <i class="iconsax" data-icon="search-normal-2"></i>
-            </router-link>
+          </RouterLink>
           </li>
           <li class="cart-option">
-            <router-link to="/wish-list" data-bs-toggle="offcanvas">
+            <RouterLink to="/wish-list">
               <i class="iconsax" data-icon="heart"></i>
               <span>1</span>
-            </router-link>
+            </RouterLink>
           </li>
           <li class="cart-option">
-            <router-link data-bs-toggle="offcanvas" to="/add-cart">
+            <router-link to="/cart">
               <i class="iconsax" data-icon="shopping-cart"></i>
               <span>4</span>
             </router-link>
@@ -967,6 +967,8 @@
 </style>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
   name: "Header",
 };

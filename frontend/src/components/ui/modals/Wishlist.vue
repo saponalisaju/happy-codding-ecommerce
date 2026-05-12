@@ -1,5 +1,9 @@
-<template>
-    <div class="offcanvas wishlist-offcanvas offcanvas-end" id="wishlistOffcanvas">
+<!-- <template>
+    <div
+  class="offcanvas offcanvas-end wishlist-offcanvas"
+  id="wishlistOffcanvas"
+  tabindex="-1"
+>
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Wishlist</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
@@ -175,10 +179,14 @@
                         </svg>
                         <h3>Wishlist is empty!</h3>
                         <p>Add items you love by tapping the heart icon.</p>
-                        <button onclick="window.location.href='https://themes.pixelstrap.net/shop-page(left-sidebar).html'"  class="btn">Explore Products</button>
+                        <RouterLink to="/shop"  class="btn">Explore Products</RouterLink>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
+</template> -->
+
+<template>
+    <h1>wishlist</h1>
 </template>
