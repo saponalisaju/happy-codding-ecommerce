@@ -25,8 +25,8 @@ import Categories from "../views/Categories/Categories.vue";
 import Register from "../views/Register.vue";
 import ContactUs from "../views/ContactUs.vue";
 import Search from "../views/Homes/Search.vue";
-import Cart from "../views/Cart.vue";
-import Wishlist from "../components/ui/modals/Wishlist.vue";
+import Cart from "@/views/Cart.vue";
+import Wishlist from "@/views/Wishlist.vue";
 
 const routes = [
   {
@@ -36,18 +36,8 @@ const routes = [
   },
   {
     path: "/shop",
-
-    name: "Index7",
-    component: () => import("../pages/shop/Home.vue"),
-    name: "shop",
+    name: "shop-now",
     component: Shop,
-    // children: [
-    //   {
-    //     path: "trendding-products",
-    //     name: "trending-products",
-    //     component: ()=> import("../sections/product/TrendingProduct.vue")
-    //   }
-    // ]
   },
 
   {
@@ -162,7 +152,7 @@ const routes = [
 
   {
     path: "/login",
-    name: "login",
+    name: "Login",
     component: Login,
     meta: {
       requiresGuest: true,
@@ -200,8 +190,8 @@ const routes = [
     component: Cart,
   },
   {
-    path: "/wish-list",
-    name: "wish-list",
+    path: "/wishlist",
+    name: "wishlist",
     component: Wishlist,
   },
 ];

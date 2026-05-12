@@ -1,289 +1,105 @@
 <template>
-  <section class="cart-section section-b-space">
+  <section class="cart-section py-4">
     <div class="container">
-      <div class="row g-sm-4 g-3">
-        <div class="col-xl-9 col-lg-8">
-          <div class="cart-header-row">
-            <h4>Your Cart</h4>
-          </div>
+      <div class="row g-4">
 
-          <div class="cart-table-container">
-            <div class="table-responsive">
-              <table class="table cart-table">
-                <thead>
-                  <tr>
-                    <th class="product-col">Product Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="product-detail">
-                        <div class="product-img">
-                          <img
-                            src="/assets/images/shop-page/product/1.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="product-info">
-                          <h5>Spinach</h5>
-                          <p>Sold By: <span>Fresho</span></p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <h5 class="price">$12.50 <del>$18.00</del></h5>
-                    </td>
-                    <td>
-                      <div class="qty-box-simple">
-                        <button class="btn-qty">
-                          <i class="ri-subtract-line"></i>
-                        </button>
-                        <input
-                          type="text"
-                          value="3"
-                          class="form-control input-qty"
-                        />
-                        <button class="btn-qty">
-                          <i class="ri-add-line"></i>
-                        </button>
-                      </div>
-                    </td>
-                    <td class="price theme-color">$12.50</td>
-                    <td class="text-center">
-                      <div class="cart-btn-group">
-                        <a
-                          href="#!"
-                          class="wishlist-btn"
-                          title="Move to Wishlist"
-                        >
-                          <i class="iconsax" data-icon="heart"></i>
-                        </a>
-                        <a href="#!" class="remove-btn" title="Remove">
-                          <i class="iconsax" data-icon="trash"></i>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
+        <!-- LEFT: CART TABLE -->
+        <div class="col-lg-8">
 
-                  <tr>
-                    <td>
-                      <div class="product-detail">
-                        <div class="product-img">
-                          <img
-                            src="/assets/images/product/shoes/1.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="product-info">
-                          <h5>Urban Trekker Boots</h5>
-                          <p>Sold By: <span>BootHouse</span></p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <h5 class="price">$145.00 <del>$185.00</del></h5>
-                    </td>
-                    <td>
-                      <div class="qty-box-simple">
-                        <button class="btn-qty">
-                          <i class="ri-subtract-line"></i>
-                        </button>
-                        <input
-                          type="text"
-                          value="3"
-                          class="form-control input-qty"
-                        />
-                        <button class="btn-qty">
-                          <i class="ri-add-line"></i>
-                        </button>
-                      </div>
-                    </td>
-                    <td class="price theme-color">$145.00</td>
-                    <td class="text-center">
-                      <div class="cart-btn-group">
-                        <a
-                          href="#!"
-                          class="wishlist-btn"
-                          title="Move to Wishlist"
-                        >
-                          <i class="iconsax" data-icon="heart"></i>
-                        </a>
-                        <a href="#!" class="remove-btn" title="Remove">
-                          <i class="iconsax" data-icon="trash"></i>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
+          <div class="card shadow-sm border-0">
 
-                  <tr>
-                    <td>
-                      <div class="product-detail">
-                        <div class="product-img">
-                          <img
-                            src="/assets/images/product/watch/3.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="product-info">
-                          <h5>Eclipse Chrono</h5>
-                          <p>Sold By: <span>TimeZone</span></p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <h5 class="price">$85.00 <del>$120.00</del></h5>
-                    </td>
-                    <td>
-                      <div class="qty-box-simple">
-                        <button class="btn-qty">
-                          <i class="ri-subtract-line"></i>
-                        </button>
-                        <input
-                          type="text"
-                          value="3"
-                          class="form-control input-qty"
-                        />
-                        <button class="btn-qty">
-                          <i class="ri-add-line"></i>
-                        </button>
-                      </div>
-                    </td>
-                    <td class="price theme-color">$85.00</td>
-                    <td class="text-center">
-                      <div class="cart-btn-group">
-                        <a
-                          href="#!"
-                          class="wishlist-btn"
-                          title="Move to Wishlist"
-                        >
-                          <i class="iconsax" data-icon="heart"></i>
-                        </a>
-                        <a href="#!" class="remove-btn" title="Remove">
-                          <i class="iconsax" data-icon="trash"></i>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="product-detail">
-                        <div class="product-img">
-                          <img
-                            src="/assets/images/product/watch/8.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="product-info">
-                          <h5>Regal Horizon</h5>
-                          <p>Sold By: <span>RoyalWatch</span></p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <h5 class="price">$125.50 <del>$160.00</del></h5>
-                    </td>
-                    <td>
-                      <div class="qty-box-simple">
-                        <button class="btn-qty">
-                          <i class="ri-subtract-line"></i>
-                        </button>
-                        <input
-                          type="text"
-                          value="3"
-                          class="form-control input-qty"
-                        />
-                        <button class="btn-qty">
-                          <i class="ri-add-line"></i>
-                        </button>
-                      </div>
-                    </td>
-                    <td class="price theme-color">$125.50</td>
-                    <td class="text-center">
-                      <div class="cart-btn-group">
-                        <a
-                          href="#!"
-                          class="wishlist-btn"
-                          title="Move to Wishlist"
-                        >
-                          <i class="iconsax" data-icon="heart"></i>
-                        </a>
-                        <a href="#!" class="remove-btn" title="Remove">
-                          <i class="iconsax" data-icon="trash"></i>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="card-header bg-white">
+              <h5 class="mb-0">Your Cart ({{ cart.length }})</h5>
             </div>
+
+            <div class="card-body p-0">
+
+              <div v-if="cart.length === 0" class="text-center p-5">
+                <img src="/assets/svg/no-data.svg#emptyCart" style="max-width:180px" />
+                <p class="mt-3">Your cart is empty</p>
+              </div>
+
+              <div v-else class="table-responsive">
+
+                <table class="table align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th>Total</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <CartItem
+                      v-for="item in cart"
+                      :key="item.id"
+                      :item="item"
+                      @inc="incQty"
+                      @dec="decQty"
+                      @remove="removeItem"
+                    />
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </div>
+
           </div>
+
         </div>
 
-        <div class="modal fade" id="couponModal" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5>Coupons</h5>
-              </div>
-              <div
-                class="coupon-box"
-                data-bs-toggle="modal"
-                data-bs-target="#couponModal"
-              >
-                <div class="label">
-                  <i class="ri-discount-percent-line"></i> Apply Coupon
-                </div>
-                <div class="arrow">
-                  <i class="ri-arrow-right-s-line"></i>
-                </div>
-              </div>
-            </div>
+        <!-- RIGHT: SUMMARY -->
+        <div class="col-lg-4">
 
-            <div class="card price-details">
-              <h5>Price Details</h5>
-              <ul id="cart-items-list"></ul>
-              <ul id="cart-summary">
-                <li>
-                  <span>Price (<span id="total-items">0</span> items)</span>
-                  <span id="total-mrp">$0.00</span>
-                </li>
-                <li class="discount">
-                  <span>Discount</span>
-                  <span id="total-discount">-$0.00</span>
-                </li>
-                <li>
-                  <span>Delivery Charges</span>
-                  <span class="text-success">Free Delivery</span>
-                </li>
-                <li class="total">
-                  <span>Total Amount</span>
-                  <span id="grand-total">$0.00</span>
-                </li>
-              </ul>
-            </div>
+          <CartSummary :cart="cart" />
 
-            <RouterLink class="btn-checkout" to="/order-success"
-              >Place order <i class="ri-arrow-right-long-line"></i
-            ></RouterLink>
-          </div>
         </div>
+
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
+import CartItem from '@/components/cart/CartItem.vue'
+import CartSummary from '@/components/cart/CartSummary.vue'
 
-const showCoupon = ref(false);
+import img1 from '/assets/images/product/furniture/1.jpg'
+import img2 from '/assets/images/product/furniture/10.jpg'
+
+const cart = ref([
+  { id: 1, name: 'Spinach', price: 12.5, qty: 2, image: img1 },
+  { id: 2, name: 'Boots', price: 145, qty: 1, image: img2 },
+])
+
+const incQty = (item) => item.qty++
+const decQty = (item) => item.qty > 1 && item.qty--
+const removeItem = (id) => {
+  cart.value = cart.value.filter(i => i.id !== id)
+}
 </script>
+
+<style scoped>
+
+.cart-section table td,
+.cart-section table th {
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 4px 10px;
+  }
+}
+
+</style>

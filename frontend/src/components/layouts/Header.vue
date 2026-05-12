@@ -27,7 +27,7 @@
         </div>
         <p>
           Get 15% OFF on your First Order.
-          <Router-link to="/shop">Shop Now!</Router-link>
+          <RouterLink to="/shop" name="shop-now">Shop Now!</RouterLink>
         </p>
         <div class="flash-fire">
           <img src="/assets/images/gif/fire.gif" alt="fire" />
@@ -105,7 +105,7 @@
                 />
               </div>
               <div class="contact">
-                <router-link to="/contact_us">
+                <router-link to="/contact_us" >
                   <h6>Contact us</h6>
                 </router-link>
                 <p>Call us for any Inquiry</p>
@@ -936,20 +936,20 @@
           </RouterLink>
           </li>
           <li class="cart-option">
-            <RouterLink to="/wish-list">
+            <RouterLink to="/wishlist" name="wishlist">
               <i class="iconsax" data-icon="heart"></i>
               <span>1</span>
             </RouterLink>
           </li>
           <li class="cart-option">
-            <router-link to="/cart">
+            <RouterLink to="/cart" name="cart">
               <i class="iconsax" data-icon="shopping-cart"></i>
               <span>4</span>
-            </router-link>
+            </RouterLink>
           </li>
         
           <li class="">
-            <router-link class="" to="/login">
+            <router-link class="" to="/login" name="Login">
               <i class="iconsax" data-icon="user-2"></i>
             </router-link>
          </li>

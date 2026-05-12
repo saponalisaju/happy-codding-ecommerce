@@ -11,7 +11,7 @@
                             <div class="product-img-box">
                                 <label class="label-red">67% OFF</label>
                                 <a href="product-page(left-thumbnail).html" class="product-img">
-                                    <img src="../assets/images/shop-page/product/12.png" class="img-fluid" alt="">
+                                    <img src="/assets/images/shop-page/product/12.png" class="img-fluid" alt="">
                                 </a>
                                 <ul class="option-box">
                                     <li class="toggle-img">
@@ -37,7 +37,7 @@
                                     <a href="product-page(left-thumbnail).html" class="name">Sneakers</a>
                                     <h4>
                                         <svg>
-                                            <use href="https://themes.pixelstrap.net/hazy/assets/svg/sprite_icon.svg#star"></use>
+                                            <use href="/assets/svg/sprite_icon.svg#star"></use>
                                         </svg>
                                         4.3
                                     </h4>
@@ -71,7 +71,7 @@
                         <div class="product-box style-3">
                             <div class="product-img-box">
                                 <a href="product-page(left-thumbnail).html" class="product-img">
-                                    <img src="../assets/images/product/shoes/4.png" class="img-fluid" alt="">
+                                    <img src="/assets/images/product/shoes/4.png" class="img-fluid" alt="">
                                 </a>
                                 <ul class="option-box">
                                     <li class="toggle-img">
@@ -98,7 +98,7 @@
                                         Sneakers</a>
                                     <h4>
                                         <svg>
-                                            <use href="https://themes.pixelstrap.net/hazy/assets/svg/sprite_icon.svg#star"></use>
+                                            <use href="/assets/svg/sprite_icon.svg#star"></use>
                                         </svg>
                                         4.4
                                     </h4>
@@ -133,7 +133,7 @@
                             <div class="product-img-box">
                                 <label class="label-red">10% OFF</label>
                                 <a href="product-page(left-thumbnail).html" class="product-img">
-                                    <img src="../assets/images/product/grocery/10.png" class="img-fluid" alt="">
+                                    <img src="/assets/images/product/grocery/10.png" class="img-fluid" alt="">
                                 </a>
                                 <ul class="option-box">
                                     <li class="toggle-img">
@@ -159,7 +159,7 @@
                                     <a href="product-page(left-thumbnail).html" class="name">Raspberries</a>
                                     <h4>
                                         <svg>
-                                            <use href="https://themes.pixelstrap.net/hazy/assets/svg/sprite_icon.svg#star"></use>
+                                            <use href="/assets/svg/sprite_icon.svg#star"></use>
                                         </svg>
                                         4.5
                                     </h4>
@@ -194,7 +194,7 @@
                             <div class="product-img-box">
                                 <label class="label-red">10% OFF</label>
                                 <a href="product-page(left-thumbnail).html" class="product-img">
-                                    <img src="../assets/images/product/grocery/12.png" class="img-fluid" alt="">
+                                    <img src="/assets/images/product/grocery/12.png" class="img-fluid" alt="">
                                 </a>
                                 <ul class="option-box">
                                     <li class="toggle-img">
@@ -220,7 +220,7 @@
                                     <a href="product-page(left-thumbnail).html" class="name">Raspberries</a>
                                     <h4>
                                         <svg>
-                                            <use href="https://themes.pixelstrap.net/hazy/assets/svg/sprite_icon.svg#star"></use>
+                                            <use href="/assets/svg/sprite_icon.svg#star"></use>
                                         </svg>
                                         4.5
                                     </h4>
@@ -272,7 +272,7 @@
                                     </li>
                                 </ul>
                                 <a href="product-page(left-thumbnail).html" class="product-img">
-                                    <img src="../assets/images/product/grocery/10.png" class="img-fluid" alt="">
+                                    <img src="/assets/images/product/grocery/10.png" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <div class="product-details">
@@ -281,7 +281,7 @@
                                     <a href="product-page(left-thumbnail).html" class="name">Raspberries</a>
                                     <h4>
                                         <svg>
-                                            <use href="https://themes.pixelstrap.net/hazy/assets/svg/sprite_icon.svg#star"></use>
+                                            <use href="/assets/svg/sprite_icon.svg#star"></use>
                                         </svg>
                                         4.5
                                     </h4>
@@ -316,7 +316,7 @@
                             <div class="product-img-box">
                                 <label class="label-red">10% OFF</label>
                                 <a href="product-page(left-thumbnail).html" class="product-img">
-                                    <img src="../assets/images/product/grocery/12.png" class="img-fluid" alt="">
+                                    <img src="/assets/images/product/grocery/12.png" class="img-fluid" alt="">
                                 </a>
                                 <ul class="option-box">
                                     <li class="toggle-img">
@@ -342,7 +342,7 @@
                                     <a href="product-page(left-thumbnail).html" class="name">Raspberries</a>
                                     <h4>
                                         <svg>
-                                            <use href="https://themes.pixelstrap.net/hazy/assets/svg/sprite_icon.svg#star"></use>
+                                            <use href="/assets/svg/sprite_icon.svg#star"></use>
                                         </svg>
                                         4.5
                                     </h4>
@@ -393,7 +393,7 @@
                                     </li>
                                 </ul>
                                 <a href="product-page(left-thumbnail).html" class="product-img">
-                                    <img src="../assets/images/shop-page/product/1.png" class="img-fluid" alt="">
+                                    <img src="/assets/images/product/shoes/1.png" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <div class="product-details">
@@ -402,7 +402,7 @@
                                     <a href="product-page(left-thumbnail).html" class="name">Spinach</a>
                                     <h4>
                                         <svg>
-                                            <use href="https://themes.pixelstrap.net/hazy/assets/svg/sprite_icon.svg#star"></use>
+                                            <use href="/assets/svg/sprite_icon.svg#star"></use>
                                         </svg>
                                         4.5
                                     </h4>

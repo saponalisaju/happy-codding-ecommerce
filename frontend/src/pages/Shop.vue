@@ -1,814 +1,323 @@
-
-
 <template>
-  <section class="shop-section section-b-space">
-    <h1>Shop Here</h1>
+  <section class="shop-section">
     <div class="container">
-      <div class="row">
-        <div class="col-xxl-3 col-xl-4">
-          <div class="shop-filter sticky">
-            <div class="shop-filter-block">
-              <div class="shop-mobile-back">
-                <button>
-                  Close
-                  <i class="ri-close-fill"></i>
-                </button>
-              </div>
-              <div class="shop-filter-box">
-                <div class="accordion">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne"
-                      >
-                        <span>Categories</span>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseOne"
-                      class="accordion-collapse collapse show"
-                    >
-                      <div class="accordion-body">
-                        <div class="search-box">
-                          <input
-                            type="search"
-                            name="text"
-                            placeholder="Search items..."
-                          />
-                          <i
-                            class="iconsax search-icon"
-                            data-icon="search-normal-2"
-                          ></i>
-                        </div>
-                        <ul class="categories-box">
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Categories"
-                              checked
-                            />
-                            <label for="Categories"
-                              >all categories <span>(54)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Furniture"
-                            />
-                            <label for="Furniture"
-                              >furniture <span>(12)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Accessories"
-                            />
-                            <label for="Accessories"
-                              >accessories <span>(36)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Clothes"
-                            />
-                            <label for="Clothes"
-                              >clothes <span>(30)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Electronic"
-                            />
-                            <label for="Electronic"
-                              >electronic <span>(21)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Bag"
-                            />
-                            <label for="Bag">bag <span>(10)</span></label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Vegetable"
-                            />
-                            <label for="Vegetable"
-                              >vegetable <span>(9)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="Watches"
-                            />
-                            <label for="Watches"
-                              >watches <span>(50)</span></label
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayFour-collapseFour"
-                      >
-                        <span>Highlight</span>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayFour-collapseFour"
-                      class="accordion-collapse collapse show"
-                    >
-                      <div class="accordion-body">
-                        <ul class="highlight-box">
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="seller"
-                            />
-                            <label for="seller"
-                              >best seller <span>(45)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="arrivals"
-                            />
-                            <label for="arrivals"
-                              >new arrivals <span>(15)</span></label
-                            >
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="sale"
-                            />
-                            <label for="sale">sale <span>(32)</span></label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="all-items"
-                            />
-                            <label for="all-items"
-                              >hot items <span>(35)</span></label
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo"
-                      >
-                        <span>Price</span>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseTwo"
-                      class="accordion-collapse collapse show"
-                    >
-                      <div class="accordion-body">
-                        <div class="range-wrapper">
-                          <div class="wrapper">
-                            <div class="slider">
-                              <div class="progress"></div>
-                            </div>
-                            <div class="range-input">
-                              <input
-                                type="range"
-                                class="range-min"
-                                min="0"
-                                max="10000"
-                                value="2500"
-                                step="100"
-                              />
-                              <input
-                                type="range"
-                                class="range-max"
-                                min="0"
-                                max="10000"
-                                value="7500"
-                                step="100"
-                              />
-                            </div>
-                            <div class="price-input">
-                              <div class="field">
-                                <input
-                                  type="number"
-                                  class="input-min"
-                                  value="2500"
-                                  disabled
-                                />
-                              </div>
-                              <span class="separator">
-                                <i class="ri-subtract-line"></i>
-                              </span>
-                              <div class="field">
-                                <input
-                                  type="number"
-                                  class="input-max"
-                                  value="7500"
-                                  disabled
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree"
-                      >
-                        <span>Color</span>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseThree"
-                      class="accordion-collapse collapse show"
-                    >
-                      <div class="accordion-body">
-                        <ul class="color-filter">
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color"
-                            />
-                            <label for="color">
-                              <span
-                                class="color"
-                                style="background-color: #94c4ff"
-                              ></span>
-                              Navy blue
-                              <span class="number">(29)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color1"
-                            />
-                            <label for="color1">
-                              <span
-                                class="color"
-                                style="background-color: #c5aff6"
-                              ></span>
-                              Light purple <span class="number">(24)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color2"
-                            />
-                            <label for="color2">
-                              <span
-                                class="color"
-                                style="background-color: #fbe8bf"
-                              ></span>
-                              Golden yellow <span class="number">(10)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color3"
-                            />
-                            <label for="color3">
-                              <span
-                                class="color"
-                                style="background-color: #b2ebd6"
-                              ></span>
-                              Greene green <span class="number">(39)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color4"
-                            />
-                            <label for="color4">
-                              <span
-                                class="color"
-                                style="background-color: #cdb69b"
-                              ></span>
-                              Browne
-                              <span class="number">(5)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color5"
-                            />
-                            <label for="color5">
-                              <span
-                                class="color"
-                                style="background-color: #ffbfbf"
-                              ></span>
-                              Orange
-                              <span class="number">(45)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color6"
-                            />
-                            <label for="color6">
-                              <span
-                                class="color"
-                                style="background-color: #fbc6ea"
-                              ></span>
-                              Baby pink
-                              <span class="number">(3)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color7"
-                            />
-                            <label for="color7">
-                              <span
-                                class="color"
-                                style="background-color: #dbe793"
-                              ></span>
-                              Dark Green <span class="number">(32)</span>
-                            </label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                              id="color8"
-                            />
-                            <label for="color8">
-                              <span
-                                class="color"
-                                style="background-color: #ffc38d"
-                              ></span>
-                              Orange olive <span class="number">(21)</span>
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayFive-collapseFive"
-                      >
-                        <span>Availability</span>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayFive-collapseFive"
-                      class="accordion-collapse collapse show"
-                    >
-                      <div class="accordion-body">
-                        <ul class="availability-box">
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="in-stock"
-                            />
-                            <label for="in-stock">in stock</label>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="radio"
-                              name="text"
-                              id="out-stock"
-                            />
-                            <label for="out-stock">out of stock</label>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStaySeven-collapseSeven"
-                      >
-                        <span>Rating</span>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStaySeven-collapseSeven"
-                      class="accordion-collapse collapse show"
-                    >
-                      <div class="accordion-body">
-                        <ul class="rating-box">
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                            />
-                            <div>
-                              <ul class="rating">
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li><h3>5 & up</h3></li>
-                              </ul>
-                              <span>(31)</span>
-                            </div>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                            />
-                            <div>
-                              <ul class="rating">
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li><h3>4 & up</h3></li>
-                              </ul>
-                              <span>(39)</span>
-                            </div>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                            />
-                            <div>
-                              <ul class="rating">
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li><h3>3 & up</h3></li>
-                              </ul>
-                              <span>(35)</span>
-                            </div>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                            />
-                            <div>
-                              <ul class="rating">
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li><h3>2 & up</h3></li>
-                              </ul>
-                              <span>(22)</span>
-                            </div>
-                          </li>
-                          <li>
-                            <input
-                              class="checkbox_animated"
-                              type="checkbox"
-                              name="text"
-                            />
-                            <div>
-                              <ul class="rating">
-                                <li>
-                                  <i class="ri-star-fill"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li>
-                                  <i class="ri-star-line"></i>
-                                </li>
-                                <li><h3>1 & up</h3></li>
-                              </ul>
-                              <span>(18)</span>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStaySix-collapseSix"
-                      >
-                        <span>Tags</span>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStaySix-collapseSix"
-                      class="accordion-collapse collapse show"
-                    >
-                      <div class="accordion-body px-0 pb-0">
-                        <ul class="tag-box">
-                          
-                          
-                          <li>
-                            <a href="#!">electronic</a>
-                          </li>
-                          <li>
-                            <a href="#!">watches</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="shop-banner-box">
-                    <div class="swiper shop-offer-banner">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                          <img
-                            src="/assets/images/shop-page/1.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="/assets/images/shop-page/2.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="/assets/images/shop-page/3.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="/assets/images/shop-page/4.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="/assets/images/shop-page/5.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="/assets/images/shop-page/6.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="/assets/images/shop-page/7.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="shop-banner">
-                      <h3>
-                        Subscribe & Get Free Shipping on Your Next Order
-                        <img
-                          src="/assets/svg/icon/like.svg"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </h3>
-                      <form class="news-latter-form">
-                        <input type="email" placeholder="Enter email" />
-                        <span>
-                          <img
-                            src="/assets/svg/icon/right-arrow.svg"
-                            alt=""
-                          />
-                        </span>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xxl-9 col-xl-8">
-          <div class="categories-items sticky">
-            <div class="filter-content">
-              <div class="d-flex align-items-center gap-2 flex-wrap">
-                <button class="filter-button theme-btn btn">
-                  <i class="ri-equalizer-2-line"></i> Filter Menu
-                </button>
-                <span>Showing 1-8 of 52 results</span>
-              </div>
-              <div class="right-menu">
-                <div>
-                  <div class="filter-option-grid d-lg-flex d-none">
-                    <button class="btn filter-box nav-link">
-                      <svg>
-                        <use
-                          href="/assets/svg/sprite_icon.svg#grid"
-                        ></use>
-                      </svg>
-                    </button>
-                    <button class="btn filter-box nav-link">
-                      <svg>
-                        <use
-                          href="/assets/svg/sprite_icon.svg#list-view"
-                        ></use>
-                      </svg>
-                    </button>
-                  </div>
-                  <ul class="shop-sorting">
-                    <li>
-                      <label>Sort:</label>
-                      <select class="form-select">
-                        <option selected disabled>Default sorting</option>
-                        <option value="1">popularity</option>
-                        <option value="2">average rating</option>
-                        <option value="3">price: low to high</option>
-                        <option value="4">price: high to low</option>
-                      </select>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="recent-box">
-              <h4>Filter:</h4>
-              <ul>
-                
-                <li>
-                  <a href="#!">Watches <i class="ri-close-line"></i></a>
-                </li>
-                
-                <li>
-                  <a href="#!">New Arrivals <i class="ri-close-line"></i></a>
-                </li>
-                <li>
-                  <a href="#!">$4000 - $6600 <i class="ri-close-line"></i></a>
-                </li>
-                <li>
-                  <button class="btn">
-                    Clear all <i class="ri-delete-bin-5-line"></i>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="product-tab-content">
-              <div
-                class="row-cols-md-3 row-cols-2 grid-section view-option row g-3 g-xl-4"
-              >
-                <ProductCard
-                   v-for="product in products"
-                   :key="product.id"
-                   :product="product"
-                 />
 
-                
-              </div>
-            </div>
-            <div class="text-center">
-              <button id="loadMoreBtn" class="btn btn-load-more theme-btn">
-                Load More
-              </button>
+      <div class="shop-layout">
+
+        <!-- ================= FILTER SIDEBAR ================= -->
+        <aside class="shop-sidebar" :class="{ open: filterOpen }">
+
+          <div class="sidebar-header d-xl-none">
+            <h5>Filters</h5>
+            <button class="close-btn" @click="filterOpen = false">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+
+          <!-- CATEGORY -->
+          <div class="filter-card">
+            <h6 class="title">Categories</h6>
+
+            <input
+              type="text"
+              class="input"
+              placeholder="Search category..."
+            />
+
+            <div class="list">
+              <label v-for="i in 6" :key="i" class="item">
+                <input type="radio" name="cat" />
+                <span>Category {{ i }} <small>(12)</small></span>
+              </label>
             </div>
           </div>
-        </div>
+
+          <!-- PRICE -->
+          <div class="filter-card">
+            <h6 class="title">Price Range</h6>
+
+            <input type="range" class="range" />
+
+            <div class="range-info">
+              <span>$0</span>
+              <span>$10,000</span>
+            </div>
+          </div>
+
+          <!-- COLOR -->
+          <div class="filter-card">
+            <h6 class="title">Colors</h6>
+
+            <div class="colors">
+              <span v-for="c in 8" :key="c" class="dot"></span>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="shop-main">
+
+          <!-- TOP BAR -->
+          <div class="topbar">
+
+            <button class="filter-btn d-xl-none" @click="filterOpen = true">
+              <i class="ri-equalizer-line"></i> Filters
+            </button>
+
+            <p class="result">Showing 1–8 of 52 products</p>
+
+            <select class="sort">
+              <option>Default sorting</option>
+              <option>Price Low → High</option>
+              <option>Price High → Low</option>
+            </select>
+
+          </div>
+
+          <!-- ACTIVE FILTERS -->
+          <div class="active-filters">
+            <span class="chip">Watches <i class="ri-close-line"></i></span>
+            <span class="chip">New Arrivals <i class="ri-close-line"></i></span>
+            <button class="clear">Clear all</button>
+          </div>
+
+          <!-- PRODUCTS GRID -->
+          <div class="product-grid">
+
+            <div
+              class="product-col"
+              v-for="product in products"
+              :key="product.id"
+            >
+              <ProductCard :product="product" />
+            </div>
+
+          </div>
+
+          <!-- LOAD MORE -->
+          <div class="load-wrap">
+            <button class="load-btn">Load More</button>
+          </div>
+
+        </main>
+
       </div>
+
     </div>
   </section>
 </template>
 
+<script setup>
+import { ref } from "vue";
+
+const filterOpen = ref(false);
+
+const products = Array.from({ length: 8 }, (_, i) => ({
+  id: i + 1,
+}));
+</script>
+
+<style scoped>
+
+/* ================= LAYOUT ================= */
+.shop-section {
+  padding: 40px 0;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 25px;
+}
+
+/* ================= SIDEBAR ================= */
+.shop-sidebar {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.filter-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.item small {
+  color: #999;
+}
+
+.range {
+  width: 100%;
+}
+
+.range-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+}
+
+.colors {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+}
+
+/* ================= MAIN ================= */
+.shop-main {
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.result {
+  font-size: 14px;
+  color: #666;
+}
+
+.sort {
+  padding: 6px 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+/* ACTIVE FILTERS */
+.active-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.chip {
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.clear {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 13px;
+}
+
+/* PRODUCTS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.load-wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.load-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: #fff;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 1199px) {
+  .shop-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    transition: 0.3s;
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  .shop-sidebar.open {
+    left: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
