@@ -7,7 +7,7 @@
   </main>
   
   <Footer />
-  <Newsletter />
+  <NewsLetter />
   <ExitModal />
   <QuickView />
   <StoreProduct />
@@ -24,7 +24,7 @@ import Footer from "./Footer.vue"
 import TapToTap from '@/components/ui/modals/TapToTap.vue'
 import CookieBar from '@/components/ui/modals/CookieBar.vue'
 
-import Newsletter from '@/components/ui/modals/Newsletter.vue'
+import NewsLetter from '@/components/ui/modals/NewsLetter.vue'
 import ExitModal from '@/components/ui/modals/ExitModal.vue'
 import QuickView from '@/components/ui/modals/QuickView.vue'
 import StoreProduct from '@/components/ui/modals/StoreProduct.vue'
