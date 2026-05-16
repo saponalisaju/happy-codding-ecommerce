@@ -122,81 +122,99 @@
 </template>
 
 <script setup>
-import {computed, onMounted, ref} from "vue";
+import { computed, onMounted, ref } from "vue";
 import store from "@/store";
+
 import Spinner from "@/components/core/Spinner.vue";
-import {PRODUCTS_PER_PAGE} from "@/constants";
 import TableHeaderCell from "@/components/core/Table/TableHeaderCell.vue";
-import {Menu, MenuButton, MenuItem, MenuItems} from "@headlessui/vue";
-import {DotsVerticalIcon, PencilIcon, TrashIcon} from '@heroicons/vue/outline'
 import OrderStatus from "./OrderStatus.vue";
 
+import { PRODUCTS_PER_PAGE } from "@/constants";
+
+import {
+  EllipsisVerticalIcon,
+  PencilSquareIcon,
+  TrashIcon,
+} from "@heroicons/vue/24/outline";
+
 const perPage = ref(PRODUCTS_PER_PAGE);
-const search = ref('');
+const search = ref("");
+
 const orders = computed(() => store.state.orders);
-const sortField = ref('updated_at');
-const sortDirection = ref('desc')
 
-const order = ref({})
-const showOrderModal = ref(false);
-
-const emit = defineEmits(['clickEdit'])
+const sortField = ref("updated_at");
+const sortDirection = ref("desc");
 
 onMounted(() => {
   getOrders();
-})
+});
 
-function getForPage(ev, link) {
-  ev.preventDefault();
-  if (!link.url || link.active) {
-    return;
-  }
-
-  getOrders(link.url)
-}
-
+/* =========================
+   Get Orders
+========================= */
 function getOrders(url = null) {
   store.dispatch("getOrders", {
     url,
     search: search.value,
     per_page: perPage.value,
     sort_field: sortField.value,
-    sort_direction: sortDirection.value
+    sort_direction: sortDirection.value,
   });
 }
 
+/* =========================
+   Pagination
+========================= */
+function getForPage(event, link) {
+  event.preventDefault();
+
+  if (!link.url || link.active) return;
+
+  getOrders(link.url);
+}
+
+/* =========================
+   Sorting
+========================= */
 function sortOrders(field) {
-  if (field === sortField.value) {
-    if (sortDirection.value === 'desc') {
-      sortDirection.value = 'asc'
-    } else {
-      sortDirection.value = 'desc'
-    }
+  if (sortField.value === field) {
+    sortDirection.value =
+      sortDirection.value === "desc" ? "asc" : "desc";
   } else {
     sortField.value = field;
-    sortDirection.value = 'asc'
+    sortDirection.value = "asc";
   }
 
-  getOrders()
+  getOrders();
 }
 
-function showAddNewModal() {
-  showOrderModal.value = true
-}
+/* =========================
+   Delete Order
+========================= */
+async function deleteOrder(order) {
+  const confirmed = confirm(
+    `Are you sure you want to delete this order?`
+  );
 
-function deleteOrder(order) {
-  if (!confirm(`Are you sure you want to delete the order?`)) {
-    return
+  if (!confirmed) return;
+
+  try {
+    await store.dispatch("deleteOrder", order.id);
+
+    store.commit(
+      "showToast",
+      "Order deleted successfully"
+    );
+
+    getOrders();
+  } catch (error) {
+    console.error("Delete failed:", error);
+
+    store.commit(
+      "showToast",
+      "Failed to delete order"
+    );
   }
-  store.dispatch('deleteOrder', order.id)
-    .then(res => {
-      // TODO Show notification
-      store.dispatch('getOrders')
-    })
-}
-
-function showOrder(p) {
-  emit('clickShow', p)
 }
 </script>
 

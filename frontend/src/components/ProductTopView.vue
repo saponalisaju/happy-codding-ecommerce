@@ -1,4 +1,3 @@
-
 <template>
 
   <div class="col-xl-3 col-lg-4 col-6">
@@ -59,27 +58,34 @@
         <!-- CART BUTTON -->
         <div class="cart-btn">
 
-  <button
-    class="btn transition-all duration-300"
-    :class="added
-      ? 'bg-success text-white border-0'
-      : 'bg-dark text-white'"
-    @click="addToCart"
-  >
+          <button
+            class="btn transition-all duration-300"
+            :class="added
+              ? 'bg-success text-white border-0'
+              : 'bg-dark text-white'"
+            @click="handleAddToCart"
+            :disabled="loading"
+          >
 
-    <!-- ICON -->
-    <i
-      :class="added
-        ? 'ri-check-line'
-        : 'ri-shopping-cart-line'"
-    ></i>
+            <!-- ICON -->
+            <i
+              :class="added
+                ? 'ri-check-line'
+                : 'ri-shopping-cart-line'"
+            ></i>
 
-    <!-- TEXT -->
-    {{ added ? 'Added' : 'Add to cart' }}
+            <!-- TEXT -->
+            {{
+              loading
+                ? 'Loading...'
+                : added
+                  ? 'Added'
+                  : 'Add to cart'
+            }}
 
-  </button>
+          </button>
 
-</div>
+        </div>
 
         <!-- PRODUCT IMAGE -->
         <router-link
@@ -120,18 +126,53 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
-const props = defineProps(['product'])
-const emit = defineEmits(['add-to-cart'])
+import { ref } from "vue";
+import { addToCart } from "@/services/api/cart";
 
-const added = ref(false)
+const props = defineProps({
+  product: Object
+});
 
-const addToCart = () => {
+const emit = defineEmits([
+  "toggle-favorite"
+]);
 
-  emit('add-to-cart', props.product)
+const added = ref(false);
+const loading = ref(false);
 
-  added.value = true
+const handleAddToCart = async () => {
 
-}
+  try {
+
+    loading.value = true;
+
+    const response = await addToCart(
+      props.product.id,
+      1
+    );
+
+    console.log(response.data);
+
+    added.value = true;
+
+  } catch (error) {
+
+    console.log(error);
+
+    if (error.response?.status === 401) {
+
+      alert("Please login first");
+
+    } else {
+
+      alert("Failed to add to cart");
+    }
+
+  } finally {
+
+    loading.value = false;
+  }
+};
+
 </script>

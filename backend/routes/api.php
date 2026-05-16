@@ -10,6 +10,8 @@ use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\Api\CloudinarySignatureController;
+
 // use App\Http\Controllers\Api\ReportController;
 
 /*
@@ -22,17 +24,20 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 
-Route::middleware('auth:sanctum')->group(function () {
 
+// Allow guests to add to cart
+Route::post('/cart/add', [CartController::class, 'addToCart']);
+
+Route::middleware('auth:sanctum')->group(function () {
     // Auth
     Route::get('/user', [AuthController::class, 'user']);
     Route::post('/logout', [AuthController::class, 'logout']);
-
-    Route::post('/cart/add', [CartController::class, 'addToCart']);
     Route::get('/cart', [CartController::class, 'index']);
     Route::delete('/cart/{id}', [CartController::class, 'remove']);
     Route::put('/cart/{id}', [CartController::class, 'updateQuantity']);
 
+    Route::options('/cloudinary/signature', fn() => response()->json([], 200));
+    Route::get('/cloudinary/signature', [CloudinarySignatureController::class, 'generate']);
 });
 
 /*

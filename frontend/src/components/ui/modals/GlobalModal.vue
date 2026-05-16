@@ -7,8 +7,10 @@
 </template>
 
 <script setup>
-import { useModalStore } from '../../../store/modal'
+import { computed } from "vue"
+import { useStore } from "vuex"
 
-const modal = useModalStore()
-const isOpen = modal.isOpen
+const store = useStore()
+
+const isOpen = computed(() => store.state.modal.isOpen)
 </script>

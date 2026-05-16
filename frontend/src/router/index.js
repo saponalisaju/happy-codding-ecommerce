@@ -1,197 +1,289 @@
 import { createRouter, createWebHistory } from "vue-router";
-const Home = () => import("../pages/Home.vue");
-const Shop = () => import("../pages/Shop.vue");
-import TrendingProducts from "../views/Products/TrendingProduct.vue";
-import AppLayout from "../components/AppLayout.vue";
-import Login from "../views/Login.vue";
-const Dashboard = () => import("../views/Admin/Dashboard.vue");
-const Products = () => import("../views/Admin/Products/Products.vue");
-import AddToCart from "../views/Cart/AddToCart.vue";
-import Users from "../views/Users/Users.vue";
-import Customers from "../views/Admin/Customers/Customers.vue";
-import CustomerView from "../views/Admin/Customers/CustomerView.vue";
-import Orders from "../views/Admin/Orders/Orders.vue";
-import OrderView from "../views/Admin/Orders/OrderView.vue";
-import RequestPassword from "../views/RequestPassword.vue";
-import ResetPassword from "../views/ResetPassword.vue";
-import NotFound from "../views/NotFound.vue";
 import store from "../store";
-import Report from "../views/Reports/Report.vue";
-import OrdersReport from "../views/Reports/OrdersReport.vue";
-import CustomersReport from "../views/Reports/CustomersReport.vue";
-import ProductForm from "../views/Admin/Products/ProductForm.vue";
-import Categories from "../views/Categories/Categories.vue";
-import Register from "../views/Register.vue";
-import ContactUs from "../views/ContactUs.vue";
-import Search from "../views/Homes/Search.vue";
-import Cart from "@/views/Cart.vue";
-import Wishlist from "@/views/Wishlist.vue";
+
+// Layouts
+import MainLayout from "../layouts/MainLayout.vue";
+import AdminLayout from "../layouts/AdminLayout.vue";
+import UserLayout from "../layouts/UserLayout.vue";
+import GuestLayout from "../layouts/GuestLayout.vue";
+import Blogs from "@/views/Admin/Blogs/Blogs.vue";
+
+// Public Views
+const Home = () => import("@/views/Public/Home.vue");
+const Shop = () => import("@/views/Public/Shop.vue");
+const ContactUs = () => import("@/views/Public/ContactUs.vue");
+const Search = () => import("@/views/Public/Search.vue");
+const BlogsPage = () => import("@/views/Public/BlogsPage.vue");
+const AboutUs = () => import("@/views/Public/AboutUs.vue");
+const BlogDetails = () => import("@/views/Public/BlogDetails.vue");
+
+// Auth
+const Login = () => import("@/views/Auth/Login.vue");
+const Register = () => import("@/views/Auth/Register.vue");
+const RequestPassword = () => import("@/views/Auth/RequestPassword.vue");
+const ResetPassword = () => import("@/views/Auth/ResetPassword.vue");
+
+// Admin
+const Dashboard = () => import("@/views/Admin/Dashboard.vue");
+
+const BlogsAdmin = () => import("@/views/Admin/Blogs/Blogs.vue");
+
+const BlogForm = () => import("@/views/Admin/Blogs/BlogForm.vue");
+
+const Products = () => import("@/views/Admin/Products/Products.vue");
+
+const ProductForm = () => import("@/views/Admin/Products/ProductForm.vue");
+
+const Categories = () => import("@/views/Admin/Categories/Categories.vue");
+
+const Orders = () => import("@/views/Admin/Orders/Orders.vue");
+
+const Customers = () => import("@/views/Admin/Customers/Customers.vue");
+
+const Users = () => import("@/views/Admin/Users/Users.vue");
+
+const Reports = () => import("@/views/Admin/Reports/Reports.vue");
+
+// User
+const UserDashboard = () => import("@/views/User/UserDashboard.vue");
+
+const UserOrders = () => import("@/views/User/UserOrders.vue");
+
+const UserProfile = () => import("@/views/User/UserProfile.vue");
+
+const Wishlist = () => import("@/views/User/Wishlist.vue");
+
+// Cart
+const Cart = () => import("@/views/Cart/Cart.vue");
+
+// Not Found
+const NotFound = () => import("@/views/NotFound.vue");
 
 const routes = [
+  // PUBLIC WEBSITE
   {
     path: "/",
-    name: "home",
-    component: Home,
-  },
-  {
-    path: "/shop",
-    name: "shop-now",
-    component: Shop,
-  },
+    component: MainLayout,
 
-  {
-    path: "/product",
-    name: "product",
-    component: Home,
     children: [
       {
-        path: "trending-products",
-        name: "trending-products",
-        component: TrendingProducts,
+        path: "",
+        name: "home",
+        component: Home,
+      },
+
+      {
+        path: "shop",
+        name: "shop",
+        component: Shop,
+      },
+
+      {
+        path: "search",
+        name: "search",
+        component: Search,
+      },
+
+      {
+        path: "blogs",
+        name: "blogs",
+        component: BlogsPage,
+      },
+
+      {
+        path: "blog/:slug",
+        name: "blog.details",
+        component: BlogDetails,
+        props: true,
+      },
+
+      {
+        path: "about",
+        name: "about",
+        component: AboutUs,
+      },
+
+      {
+        path: "contact",
+        name: "contact",
+        component: ContactUs,
+      },
+
+      {
+        path: "cart",
+        name: "cart",
+        component: Cart,
       },
     ],
   },
 
+  // AUTH
   {
-    path: "/search",
-    name: "search",
-    component: Search,
+    path: "/",
+    component: GuestLayout,
+
+    children: [
+      {
+        path: "login",
+        name: "login",
+        component: Login,
+        meta: {
+          requiresGuest: true,
+        },
+      },
+
+      {
+        path: "register",
+        name: "register",
+        component: Register,
+        meta: {
+          requiresGuest: true,
+        },
+      },
+
+      {
+        path: "request-password",
+        name: "requestPassword",
+        component: RequestPassword,
+      },
+
+      {
+        path: "reset-password/:token",
+        name: "resetPassword",
+        component: ResetPassword,
+      },
+    ],
   },
+
+  // ADMIN
   {
-    path: "/app",
-    name: "app",
-    redirect: "/app/dashboard",
-    component: AppLayout,
+    path: "/admin",
+
+    component: AdminLayout,
+
     meta: {
       requiresAuth: true,
+      requiresAdmin: true,
     },
+
     children: [
       {
         path: "dashboard",
-        name: "app.dashboard",
+        name: "admin.dashboard",
         component: Dashboard,
       },
 
       {
         path: "products",
-        name: "app.products",
+        name: "admin.products",
         component: Products,
       },
-      {
-        path: "categories",
-        name: "app.categories",
-        component: Categories,
-      },
+
       {
         path: "products/create",
-        name: "app.products.create",
+        name: "admin.products.create",
         component: ProductForm,
       },
+
       {
         path: "products/:id",
-        name: "app.products.edit",
+        name: "admin.products.edit",
         component: ProductForm,
         props: true,
       },
+
       {
-        path: "users",
-        name: "app.users",
-        component: Users,
+        path: "categories",
+        name: "admin.categories",
+        component: Categories,
       },
+
+      {
+        path: "orders",
+        name: "admin.orders",
+        component: Orders,
+      },
+
+      {
+        path: "orders/:id",
+        name: "admin.orders.view",
+        component: () => import("../views/Admin/Orders/OrderView.vue"),
+        props: true,
+      },
+
       {
         path: "customers",
-        name: "app.customers",
+        name: "admin.customers",
         component: Customers,
       },
       {
-        path: "customers/:id",
-        name: "app.customers.view",
-        component: CustomerView,
+        path: "users",
+        name: "admin.users",
+        component: Users,
       },
       {
-        path: "orders",
-        name: "app.orders",
-        component: Orders,
+        path: "reports",
+        name: "admin.reports",
+        component: Reports,
+      },
+
+      {
+        path: "blogs",
+        name: "admin.blogs",
+        component: Blogs,
       },
       {
-        path: "orders/:id",
-        name: "app.orders.view",
-        component: OrderView,
+        path: "blogs/create",
+        name: "admin.blogs.create",
+        component: BlogForm,
       },
       {
-        path: "report",
-        name: "reports",
-        component: Report,
-        meta: {
-          requiresAuth: true,
-        },
-        children: [
-          {
-            path: "orders/:date?",
-            name: "reports.orders",
-            component: OrdersReport,
-          },
-          {
-            path: "customers/:date?",
-            name: "reports.customers",
-            component: CustomersReport,
-          },
-        ],
+        path: "blogs/:id",
+        name: "admin.blogs.edit",
+        component: BlogForm,
       },
     ],
   },
+
+  // USER ACCOUNT
   {
-    path: "/register",
-    name: "register",
-    component: Register,
+    path: "/account",
+
+    component: UserLayout,
     meta: {
-      requiresGuest: true,
+      requiresAuth: true,
     },
+
+    children: [
+      {
+        path: "dashboard",
+        name: "account.dashboard",
+        component: UserDashboard,
+      },
+
+      {
+        path: "orders",
+        name: "account.orders",
+        component: UserOrders,
+      },
+
+      {
+        path: "profile",
+        name: "account.profile",
+        component: UserProfile,
+      },
+
+      {
+        path: "wishlist",
+        name: "account.wishlist",
+        component: Wishlist,
+      },
+    ],
   },
 
+  // 404
   {
-    path: "/login",
-    name: "login",
-    component: Login,
-    meta: {
-      requiresGuest: true,
-    },
-  },
-  {
-    path: "/request-password",
-    name: "requestPassword",
-    component: RequestPassword,
-    meta: {
-      requiresGuest: true,
-    },
-  },
-  {
-    path: "/reset-password/:token",
-    name: "resetPassword",
-    component: ResetPassword,
-    meta: {
-      requiresGuest: true,
-    },
-  },
-
-  {
-    path: "/contact_us",
-    name: "contact_us",
-    component: ContactUs,
-  },
-  {
-    path: "/cart",
-    name: "cart",
-    component: Cart,
-  },
-  {
-    path: "/wishlist",
-    name: "wishlist",
-    component: Wishlist,
-  },
-
-  {
-    path: "/:pathMatch(.*)",
+    path: "/:pathMatch(.*)*",
     name: "notfound",
     component: NotFound,
   },
@@ -202,16 +294,41 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to) => {
-  const token = store.state.user.token;
-
+// ROUTE GUARD
+router.beforeEach((to, from) => {
+  console.log("Going to:", to.name);
+  const token = localStorage.getItem("token");
+  const currentUser = JSON.parse(localStorage.getItem("user") || "null");
+  // LOGIN REQUIRED
   if (to.meta.requiresAuth && !token) {
-    return { name: "login" };
+    return {
+      name: "login",
+      query: {
+        redirect: to.fullPath,
+      },
+    };
   }
 
-  if (to.meta.requiresGuest && token) {
+  // ADMIN ONLY
+  if (to.meta.requiresAdmin && currentUser?.is_admin !== 1) {
     return { name: "home" };
   }
+
+  // GUEST ONLY
+  if (to.meta.requiresGuest && token) {
+    return currentUser?.is_admin === 1
+      ? { name: "admin.dashboard" }
+      : { name: "account.dashboard" };
+  }
+
+  return true;
+});
+
+/* ✅ AFTER PAGE RENDER */
+router.afterEach(() => {
+  setTimeout(() => {
+    window.init_iconsax?.();
+  }, 100);
 });
 
 export default router;

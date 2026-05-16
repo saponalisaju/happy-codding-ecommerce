@@ -1,44 +1,43 @@
-import axios from 'axios'
-import store from '../../store'
-import router from '../../router'
+import axios from "axios";
+import store from "../../store";
 
 const axiosClient = axios.create({
-  baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`,
+  baseURL: "http://127.0.0.1:8000/api",
+  timeout: 10000,
+  withCredentials: true,
   headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  }
-})
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+});
 
-// 🔥 REQUEST INTERCEPTOR (FIXED)
-axiosClient.interceptors.request.use(config => {
-
-  const token = store.state.user.token || localStorage.getItem('token')
+// REQUEST
+axiosClient.interceptors.request.use((config) => {
+  const token = store.state.user.token;
 
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`
+    config.headers.Authorization = `Bearer ${token}`;
   }
 
-  return config
-})
+  return config;
+});
 
-// 🔥 RESPONSE INTERCEPTOR
+// RESPONSE
 axiosClient.interceptors.response.use(
-  response => response,
-  error => {
-
+  (response) => response,
+  (error) => {
     if (error.response?.status === 401) {
+      store.commit("setUser", null);
+      store.commit("setToken", null);
+      localStorage.removeItem("token");
 
-      store.commit('setUser', null)
-      store.commit('setToken', null)
-
-      localStorage.removeItem('token')
-
-      router.push({ name: 'login' })
+      import("../../router").then(({ default: router }) => {
+        router.push({ name: "login" });
+      });
     }
 
-    return Promise.reject(error)
-  }
-)
+    return Promise.reject(error);
+  },
+);
 
-export default axiosClient
+export default axiosClient;

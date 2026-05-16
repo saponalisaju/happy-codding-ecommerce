@@ -1,7 +1,7 @@
 export default {
   user: {
-    token: sessionStorage.getItem('TOKEN'),
-    data: {}
+    token: localStorage.getItem("token") || null,
+    data: {},
   },
   products: {
     loading: false,
@@ -11,7 +11,7 @@ export default {
     to: null,
     page: 1,
     limit: null,
-    total: null
+    total: null,
   },
   users: {
     loading: false,
@@ -21,7 +21,7 @@ export default {
     to: null,
     page: 1,
     limit: null,
-    total: null
+    total: null,
   },
   customers: {
     loading: false,
@@ -31,7 +31,7 @@ export default {
     to: null,
     page: 1,
     limit: null,
-    total: null
+    total: null,
   },
   countries: [],
   orders: {
@@ -42,24 +42,24 @@ export default {
     to: null,
     page: 1,
     limit: null,
-    total: null
+    total: null,
   },
   toast: {
     show: false,
-    message: '',
-    delay: 5000
+    message: "",
+    delay: 5000,
   },
   dateOptions: [
-    {key: '1d', text: 'Last Day'},
-    {key: '1k', text: 'Last Week'},
-    {key: '2k', text: 'Last 2 Weeks'},
-    {key: '1m', text: 'Last Month'},
-    {key: '3m', text: 'Last 3 Months'},
-    {key: '6m', text: 'Last 6 Months'},
-    {key: 'all', text: 'All Time'},
+    { key: "1d", text: "Last Day" },
+    { key: "1k", text: "Last Week" },
+    { key: "2k", text: "Last 2 Weeks" },
+    { key: "1m", text: "Last Month" },
+    { key: "3m", text: "Last 3 Months" },
+    { key: "6m", text: "Last 6 Months" },
+    { key: "all", text: "All Time" },
   ],
   categories: {
     loading: false,
     data: [],
-  }
-}
+  },
+};

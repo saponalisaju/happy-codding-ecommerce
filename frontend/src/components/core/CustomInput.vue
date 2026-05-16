@@ -77,7 +77,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 const editor = ClassicEditor;
 
 const props = defineProps({
-  modelValue: [String, Number, File],
+  modelValue: [String, Number, File, Boolean],
   label: String,
   type: {
     type: String,

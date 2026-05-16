@@ -113,36 +113,40 @@
 </template>
 
 <script setup>
-import {computed, onMounted, ref} from "vue";
+import { ref, onMounted } from "vue";
 import store from "@/store";
-import {useRoute} from "vue-router";
-
+import { useRoute } from "vue-router";
 import OrderStatus from "./OrderStatus.vue";
 import axiosClient from "@/services/api/axios";
 
-const route = useRoute()
+const route = useRoute();
 
 const order = ref(null);
 const orderStatuses = ref([]);
 
 onMounted(() => {
-  store.dispatch('getOrder', route.params.id)
-    .then(({data}) => {
-      order.value = data
-    })
+  store.dispatch("getOrder", route.params.id)
+    .then(({ data }) => {
+      order.value = data;
+    });
 
-  axiosClient.get(`/orders/statuses`)
-    .then(({data}) => orderStatuses.value = data)
-})
+  axiosClient.get("/orders/statuses")
+    .then(({ data }) => {
+      orderStatuses.value = data;
+    });
+});
 
 function onStatusChange() {
-  axiosClient.post(`/orders/change-status/${order.value.id}/${order.value.status}`)
-    .then(({data}) => {
-      store.commit('showToast', `Order status was successfully changed into "${order.value.status}"`)
-    })
-
+  axiosClient.post(
+    `/orders/change-status/${order.value.id}/${order.value.status}`
+  )
+  .then(() => {
+    store.commit(
+      "showToast",
+      `Order status changed to "${order.value.status}"`
+    );
+  });
 }
-
 </script>
 
 <style scoped>
