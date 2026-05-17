@@ -1,22 +1,12 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import { computed, nextTick } from "vue";
+import { RouterLink, useRouter } from "vue-router";
+import { computed, ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import store from "@/store";
-import { ref, onMounted, onBeforeUnmount } from "vue";
-import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-onMounted(async () => {
-  await nextTick();
-
-  if (window.Iconsax) {
-    window.Iconsax.replace();
-  }
-});
-
-const token = computed(() => store.state.user.token);
-
+const token = computed(() => store.state.token); 
+// or store.state.user?.token depending on your structure
 
 const isOpen = ref(false);
 
@@ -32,7 +22,13 @@ const handleClickOutside = (e) => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
+
+  if (window.Iconsax) {
+    window.Iconsax.replace();
+  }
+
   document.addEventListener("click", handleClickOutside);
 });
 
@@ -43,15 +39,12 @@ onBeforeUnmount(() => {
 const logout = () => {
   store.commit("setUser", null);
   store.commit("setToken", null);
+
   localStorage.removeItem("token");
   localStorage.removeItem("user");
 
   router.push({ name: "home" });
 };
-
-
-const openDropdown = ref(null);
-
 </script>
 
 <template>

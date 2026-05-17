@@ -1,26 +1,20 @@
+// Vuex store migrated to Pinia. This file is now obsolete.
+// Please use src/stores/main.js (Pinia) instead.
 import { createStore } from "vuex";
-import state from "./state";
-import * as actions from "./actions";
-import * as mutations from "./mutations";
 
-// ✅ IMPORT axiosClient (IMPORTANT)
-import axiosClient from "@/services/api/axios";
-import modal from "./modules/modal";
+export default createStore({
+  state: {
+    user: null,
+    token: null,
+  },
 
-const token = localStorage.getItem("token");
+  mutations: {
+    setUser(state, user) {
+      state.user = user;
+    },
 
-if (token) {
-  axiosClient.defaults.headers.common.Authorization = `Bearer ${token}`;
-}
-
-const store = createStore({
-  state,
-  getters: {},
-  actions,
-  mutations,
-  modules: {
-    modal,
+    setToken(state, token) {
+      state.token = token;
+    },
   },
 });
-
-export default store;

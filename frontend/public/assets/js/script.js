@@ -1159,21 +1159,6 @@ document.addEventListener("visibilitychange", function () {
 /*====================
     29. PWA Service Worker Registration
 =======================*/
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then((registration) => {
-        console.log(
-          "Service Worker registered with scope:",
-          registration.scope,
-        );
-      })
-      .catch((error) => {
-        console.log("Service Worker registration failed:", error);
-      });
-  });
-}
 
 /*====================
     30. PWA Install Prompt JS

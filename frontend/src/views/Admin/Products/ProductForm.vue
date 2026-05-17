@@ -76,8 +76,8 @@ import CustomInput from "@/components/core/CustomInput.vue";
 import store from "@/store/index.js";
 import Spinner from "@/components/core/Spinner.vue";
 import {useRoute, useRouter} from "vue-router";
-import Treeselect from '@riophae/vue-treeselect'
-import '@riophae/vue-treeselect/dist/vue-treeselect.css'
+import Treeselect from "vue3-treeselect"
+import "vue3-treeselect/dist/vue3-treeselect.css"
 import axiosClient from '@/services/api/axios.js';
 import axios from 'axios';
 

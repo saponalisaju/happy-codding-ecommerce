@@ -1,8 +1,9 @@
+
 import axios from "axios";
-import store from "../../store";
+import { useMainStore } from "@/stores/main";
 
 const axiosClient = axios.create({
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL: import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000/api",
   timeout: 10000,
   withCredentials: true,
   headers: {
@@ -13,12 +14,16 @@ const axiosClient = axios.create({
 
 // REQUEST
 axiosClient.interceptors.request.use((config) => {
-  const token = store.state.user.token;
-
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+  // Pinia store must be used inside a function
+  try {
+    const store = useMainStore();
+    const token = store.user.token;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+  } catch (e) {
+    // Pinia not available (e.g. outside setup)
   }
-
   return config;
 });
 
@@ -27,15 +32,15 @@ axiosClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      store.commit("setUser", null);
-      store.commit("setToken", null);
+      try {
+        const store = useMainStore();
+        store.logout();
+      } catch (e) {}
       localStorage.removeItem("token");
-
       import("../../router").then(({ default: router }) => {
         router.push({ name: "login" });
       });
     }
-
     return Promise.reject(error);
   },
 );

@@ -4,12 +4,12 @@ import { computed, nextTick } from "vue";
 import store from "@/store";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useRouter } from "vue-router";
-import CategoryMenu from "../../views/Public/MegaMenu/CategoryMenu.vue";
-import ProductMenu from "../../views/Public/MegaMenu/ProductMenu.vue";
-import ShopMenu from "../../views/Public/MegaMenu/ShopMenu.vue";
-import PageMenu from "../../views/Public/MegaMenu/PageMenu.vue";
-import BlogMenu from "../../views/Public/MegaMenu/BlogMenu.vue";
-import FeaturesMenu from "../../views/Public/MegaMenu/FeaturesMenu.vue";
+import CategoryMenu from "@/views/Public/MegaMenu/CategoryMenu.vue";
+import ProductMenu from "@/views/Public/MegaMenu/ProductMenu.vue";
+import ShopMenu from "@/views/Public/MegaMenu/ShopMenu.vue";
+import PageMenu from "@/views/Public/MegaMenu/PageMenu.vue";
+import BlogMenu from "@/views/Public/MegaMenu/BlogMenu.vue";
+import FeaturesMenu from "@/views/Public/MegaMenu/FeaturesMenu.vue";
 import HeaderOption from "./HeaderOption.vue";
 import MainHeader from "./MainHeader.vue";
 import TopHeader from "./TopHeader.vue";
@@ -24,7 +24,7 @@ onMounted(async () => {
   }
 });
 
-const token = computed(() => store.state.user.token);
+const token = computed(() => store.state.user?.token);
 
 
 const isOpen = ref(false);
